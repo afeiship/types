@@ -1,0 +1,27 @@
+{
+  "name": "angular-module-stiffener",
+  "description": "An improved angular.module() – split your modules into multiple files.",
+  "main": "dist",
+  "authors": [
+    "afei"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "next"
+  ],
+  "homepage": "https://github.com/afeiship/angular-module-stiffener",
+  "moduleType": [
+    "amd"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5"
+  }
+}
