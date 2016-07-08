@@ -1,7 +1,7 @@
 {
   "name": "angular-module-stiffener",
   "description": "An improved angular.module() – split your modules into multiple files.",
-  "main": "dist",
+  "main": "dist/angular-module-stiffener.js",
   "authors": [
     "afei"
   ],
