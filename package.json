@@ -8,7 +8,9 @@
     "email": "1290657123@qq.com"
   },
   "license": "MIT",
+  "main": "index.d.ts",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
