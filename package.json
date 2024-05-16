@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "Common types for typescript.",
   "homepage": "https://github.com/afeiship/types",
-  "author": {
-    "name": "afeiship",
-    "email": "1290657123@qq.com"
-  },
   "license": "MIT",
   "main": "index.d.ts",
   "publishConfig": {
