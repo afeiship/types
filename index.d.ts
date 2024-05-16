@@ -1,2 +1,3 @@
-import { StandardEventTarget, WechatEventTarget } from './modules/event';
-export { StandardEventTarget, WechatEventTarget };
+/// <reference types="./modules/data.d.ts" />
+/// <reference types="./modules/event.d.ts" />
+/// <reference types="./modules/lang.d.ts" />

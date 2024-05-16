@@ -1,7 +1,7 @@
-export interface StandardEventTarget {
+export interface StdEvent {
   target: { value: any };
 }
 
-export interface WechatEventTarget {
+export interface StdCustomEvent {
   detail: { value: any };
 }
