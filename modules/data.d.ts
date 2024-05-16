@@ -1,1 +1,1 @@
-type KeyValue<T> = { label: string; value: T };
+type LabelValue<T> = { label: string; value: T };
