@@ -1,0 +1,3 @@
+type Disabled = {
+  disabled?: boolean;
+};
