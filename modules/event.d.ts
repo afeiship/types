@@ -5,3 +5,7 @@ export interface StdEvent {
 export interface StdCustomEvent {
   detail: { value: any };
 }
+
+export interface Destroyable {
+  destroy(): void;
+}
