@@ -9,3 +9,8 @@ export interface StdCustomEvent {
 export interface Destroyable {
   destroy(): void;
 }
+
+export interface FormWidet {
+  onChange: (value: any) => void;
+  value: any;
+}
