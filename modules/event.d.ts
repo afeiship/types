@@ -1,16 +1,16 @@
-export interface StdEvent {
+type StdEvent = {
   target: { value: any };
-}
+};
 
-export interface StdCustomEvent {
+type StdCustomEvent = {
   detail: { value: any };
-}
+};
 
-export interface Destroyable {
+type Destroyable = {
   destroy(): void;
-}
+};
 
-export interface FormWidget {
+type FormWidget = {
   onChange: (value: any) => void;
   value: any;
-}
+};
