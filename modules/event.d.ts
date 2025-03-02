@@ -10,7 +10,7 @@ export interface Destroyable {
   destroy(): void;
 }
 
-export interface FormWidet {
+export interface FormWidget {
   onChange: (value: any) => void;
   value: any;
 }
