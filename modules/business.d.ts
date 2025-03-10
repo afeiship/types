@@ -5,3 +5,9 @@ type Model = {
 type Items = {
   items: any[];
 }
+
+type CategoryItem = {
+  label: string;
+  value: string;
+  children?: CategoryItem[];
+};
