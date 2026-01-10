@@ -1,6 +1,7 @@
 type CellProps = {
   text: string;
   record: any;
+  [key: string]: any;
 };
 
 type CellFnItem = {
