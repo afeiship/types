@@ -1,0 +1,162 @@
+# @jswork/types
+> Common types for TypeScript - A lightweight, focused type definition library providing essential utility types for everyday TypeScript development. This package includes carefully crafted type definitions for business logic, data structures, events, language primitives, status management, Ant Design components, and utility functions.
+All types are organized in modular structure and can be imported individually or as a complete bundle. Perfect for React, Vue, Node.js, or any TypeScript project.
+**Important notes for agents:**
+- This is a TypeScript definition-only package (no runtime code)
+- All types are available via `modules/*.d.ts` file structure
+- The package is version 1.0.10 and actively maintained
+- Designed for AI-assisted development with clear, predictable type names
+- MIT licensed for maximum compatibility
+## Documentation
+- [Homepage](https://github.com/afeiship/types): Main repository with source code and updates.
+- [NPM Package](https://www.npmjs.com/package/@jswork/types): Package page with installation command and version info.
+## Installation
+```bash
+# Using yarn
+yarn add --dev @jswork/types
+
+# Using npm
+npm install --save-dev @jswork/types
+
+# Using pnpm
+pnpm add -D @jswork/types
+```
+## Usage
+Once installed, all types are globally available in your TypeScript project. Reference the main index to include all modules:
+```typescript
+/// <reference types="@jswork/types" />
+```
+Or reference specific modules individually:
+```typescript
+/// <reference types="@jswork/types/modules/antd" />
+/// <reference types="@jswork/types/modules/business" />
+/// <reference types="@jswork/types/modules/data" />
+/// <reference types="@jswork/types/modules/event" />
+/// <reference types="@jswork/types/modules/lang" />
+/// <reference types="@jswork/types/modules/status" />
+/// <reference types="@jswork/types/modules/util" />
+```
+## Type Modules
+The library is organized into 7 focused modules, each targeting specific use cases:
+### Ant Design Types (`modules/antd.d.ts`)
+Type definitions specifically for Ant Design components and patterns.
+- **CellProps**: Table cell render function props with `text`, `record`, and additional properties
+- **CellFnItem**: Dictionary of cell render functions keyed by column name
+```typescript
+// Example usage with Ant Design Table
+const renderCell: CellFnItem = {
+  name: (text, record) => <a>{text}</a>,
+  status: (text, record) => <Tag color={record.color}>{text}</Tag>
+};
+```
+### Business Types (`modules/business.d.ts`)
+Common business logic and data structure types.
+- **Model**: Generic model wrapper with optional `model` property
+- **Items**: Array-based data structure with `items` property
+- **CategoryItem**: Hierarchical category/tree structure with `label`, `value`, and optional `children`
+```typescript
+// Example usage
+const categories: CategoryItem[] = [
+  {
+    label: 'Electronics',
+    value: 'electronics',
+    children: [
+      { label: 'Phones', value: 'phones' },
+      { label: 'Laptops', value: 'laptops' }
+    ]
+  }
+];
+```
+### Data Types (`modules/data.d.ts`)
+Generic data container types.
+- **LabelValue<T>`**: Generic label-value pair where value is typed
+```typescript
+// Example usage
+const options: LabelValue<number>[] = [
+  { label: 'Option 1', value: 1 },
+  { label: 'Option 2', value: 2 }
+];
+```
+### Event Types (`modules/event.d.ts`)
+Standard event handling types.
+- **StdEvent**: Standard form/input event with `target.value`
+- **StdCustomEvent**: Custom event with `detail.value`
+- **Destroyable**: Interface for objects with cleanup via `destroy()` method
+- **FormWidget**: Standard form widget interface with `onChange` and `value`
+```typescript
+// Example usage
+const handleChange = (e: StdEvent) => {
+  console.log(e.target.value);
+};
+
+const destroyable: Destroyable = {
+  destroy() {
+    // Cleanup logic
+  }
+};
+```
+### Language Types (`modules/lang.d.ts`)
+Primitive and object type definitions.
+- **Primitive**: Union of JS primitives (`string | number | boolean | null | undefined`)
+- **AnyObject**: Dictionary/object with string keys and any values
+```typescript
+// Example usage
+const data: AnyObject = {
+  name: 'John',
+  age: 30,
+  active: true
+};
+
+function process(value: Primitive) {
+  // Handle primitive values
+}
+```
+### Status Types (`modules/status.d.ts`)
+UI state management types.
+- **Disabled**: Interface for components with optional `disabled` property
+```typescript
+// Example usage
+const buttonProps: Disabled = {
+  disabled: false
+};
+```
+### Utility Types (`modules/util.d.ts`)
+Advanced TypeScript utility types.
+- **Prettify<T>**: Flattens and improves type display in IDEs by intersecting with `{}`
+- **ValueOf<T>`: Extracts union type of all object property values
+```typescript
+// Example usage
+type User = {
+  id: number;
+  name: string;
+  email: string;
+};
+
+// Extract all possible value types from User
+type UserValues = ValueOf<User>; // number | string
+
+// Prettify complex types for better IDE display
+type PrettyUser = Prettify<{
+  profile: { name: string; age: number };
+  settings: { theme: string };
+}>;
+```
+## Usage Notes for Agents
+- **Type-Only Package**: This package contains only TypeScript definitions, no runtime JavaScript
+- **Module Resolution**: Types are automatically available via TypeScript's module resolution
+- **Global Types**: When using `/// <reference types="@jswork/types" />`, all types are globally available
+- **Type Safety**: All types are designed to provide maximum type safety with minimum complexity
+- **No Dependencies**: Pure TypeScript definitions with zero runtime dependencies
+- **Tree Shakable**: Reference only the modules you need
+- **Version**: Current version is 1.0.10
+## Best Practices
+1. **Import Styles**: Use triple-slash directives for global availability or ES imports for scoped usage
+2. **Type Composition**: Combine multiple types for complex scenarios (e.g., `Disabled & FormWidget`)
+3. **Generic Types**: Leverage generic types like `LabelValue<T>` for type-safe data structures
+4. **Utility Types**: Use `Prettify<T>` for better type hints in complex intersections
+5. **Ant Design Integration**: The `antd` module types are optimized for Ant Design Table columns
+## Development
+- **Repository**: https://github.com/afeiship/types
+- **License**: MIT
+- **Author**: @afeiship
+- **Keywords**: types, typing, jswork, jsw, typescript, definitions
